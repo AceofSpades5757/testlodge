@@ -7,6 +7,7 @@ VENV_PIP = ${VENV_DIR}/Scripts/pip.exe
 
 # Settings
 .DEFAULT_GOAL = help
+.PHONY: build publish test venv clean
 
 help:
 	@echo Manage $(PROJECT_NAME). Usage:
