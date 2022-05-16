@@ -19,8 +19,8 @@ class CaseJSON(TypedDict):
     last_saved_by: UserJSON
     created_at: DateTimeStr
     updated_at: DateTimeStr
-    custom_fields: list[CustomFieldJSON]
-    requirements: list[RequirementDocumentJSON]
+    custom_fields: List[CustomFieldJSON]
+    requirements: List[RequirementDocumentJSON]
     step_number: str
     title: str
     description: Optional[str]
