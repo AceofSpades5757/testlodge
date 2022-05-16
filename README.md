@@ -39,12 +39,27 @@ user_dict: UserDetails = dict(
 )
 ```
 
+## Requirement Documents
+
+``` python
+from testlodge import RequirementDocumentDetails
+
+
+requirement_document_dict: RequirementDocumentDetails = dict(
+    id=123456,
+    title='title',
+    should_version: True,
+    project_id=234567,
+    created_at="2022-01-01T20:30:40.123456Z",
+    updated_at="2022-05-16T01:08:41.493190Z",
+)
+```
+
 ## Suite
 
 ...
 
 ## Suite Section
-
 
 ``` python
 from testlodge import SuiteSectionDetails
@@ -57,4 +72,3 @@ suite_section_dict: SuiteSectionDetails = dict(
     created_at="2022-01-01T20:30:40.123456Z",
     updated_at="2022-05-16T01:08:41.493190Z",
 )
-```
