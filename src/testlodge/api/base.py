@@ -6,6 +6,6 @@ class BaseAPI(ABC):
 
     name: str = 'api'
 
-    def __init__(self, client=None):
+    def __init__(self, client):
 
         self.client = client
