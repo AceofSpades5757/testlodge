@@ -2,7 +2,7 @@ import requests
 from furl import furl
 from furl.furl import furl as Url
 from requests import Response
-from testlodge.types import Identifier
+from testlodge._types import Identifier
 
 
 class Client:
