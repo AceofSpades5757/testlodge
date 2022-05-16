@@ -29,7 +29,7 @@ tl = Client(
 from testlodge import UserJSON
 
 
-user_dict: UserJSON = dict(
+user_json: UserJSON = dict(
     id=123456,
     firstname='First',
     lastname='Last',
@@ -45,7 +45,7 @@ user_dict: UserJSON = dict(
 from testlodge import RequirementDocumentJSON
 
 
-requirement_document_dict: RequirementDocumentJSON = dict(
+requirement_document_json: RequirementDocumentJSON = dict(
     id=123456,
     title='title',
     should_version: True,
@@ -65,7 +65,7 @@ requirement_document_dict: RequirementDocumentJSON = dict(
 from testlodge import SuiteSectionJSON
 
 
-suite_section_dict: SuiteSectionJSON = dict(
+suite_section_json: SuiteSectionJSON = dict(
     id=123456,
     title='title',
     suite_id=234567,
@@ -74,19 +74,19 @@ suite_section_dict: SuiteSectionJSON = dict(
 )
 ```
 
-## Suite Section
+## Case
 
 ``` python
 from testlodge import CaseJSON
 
 
-case_dict: CaseJSON = dict(
+case_json: CaseJSON = dict(
     id=123456,
     project_id=234567,
     suite_section_id=345678,
     position=1,
     last_saved_by_id=456789,
-    last_saved_by=user_dict,
+    last_saved_by=user_json,
     created_at="2022-01-01T20:30:40.123456Z",
     updated_at="2022-05-16T01:08:41.493190Z",
     custom_fields=[],
@@ -96,5 +96,18 @@ case_dict: CaseJSON = dict(
     description=None,
     test_steps=None,
     expected_result=None,
+)
+```
+
+## Custom Field
+
+``` python
+from testlodge import CustomFieldJSON
+
+
+custom_field_json: CustomFieldJSON = dict(
+    id=123456,
+    name='cf_1',
+    value='my_value'),
 )
 ```
