@@ -4,7 +4,7 @@ from testlodge import UserJSON
 
 
 class TestUser(unittest.TestCase):
-    """ Test User """
+    """Test User"""
 
     def test_simple(self):
 

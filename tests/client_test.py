@@ -5,7 +5,7 @@ from testlodge import Client
 
 
 class TestClient(unittest.TestCase):
-    """ Test Client """
+    """Test Client"""
 
     def setUp(self):
         self.client = Client(
@@ -15,7 +15,7 @@ class TestClient(unittest.TestCase):
         )
 
     def test_paths(self) -> None:
-        """ Test the client paths. """
+        """Test the client paths."""
 
         client = self.client
 
@@ -25,7 +25,7 @@ class TestClient(unittest.TestCase):
         )
 
     def test_path_interface(self) -> None:
-        """ Sanity checks for furl's path interface. """
+        """Sanity checks for furl's path interface."""
 
         client = self.client
 

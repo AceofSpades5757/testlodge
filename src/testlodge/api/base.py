@@ -2,7 +2,7 @@ from abc import ABC
 
 
 class BaseAPI(ABC):
-    """ Abstract Base Class for an API """
+    """Abstract Base Class for an API"""
 
     name: str = 'api'
 

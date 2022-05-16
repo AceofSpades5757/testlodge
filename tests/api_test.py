@@ -5,7 +5,7 @@ from testlodge import SuiteSectionAPI
 
 class TestAPI(unittest.TestCase):
     def test_missing_client(self) -> None:
-        """ API should not run without a client. """
+        """API should not run without a client."""
 
         api = SuiteSectionAPI()
 
