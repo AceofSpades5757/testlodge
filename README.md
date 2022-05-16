@@ -132,6 +132,28 @@ case_json: CaseJSON = dict(
 )
 ```
 
+### API
+
+``` python
+import os
+
+from testlodge import Client
+from testlodge import CaseJSON
+
+
+tl = Client(
+    email='my.email@email.com',
+    api_key=os.environ['TESTLODGE_API_KEY'],
+    account_id=os.environ['TESTLODGE_ACCOUNT_ID'],
+)
+
+case_json: CaseJSON = tl.api.case._show(
+    project_id=123456,
+    suite_id=234567,
+    case_id=345678,
+)
+```
+
 ## Custom Field
 
 ``` python
