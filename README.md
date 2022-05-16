@@ -72,3 +72,29 @@ suite_section_dict: SuiteSectionDetails = dict(
     created_at="2022-01-01T20:30:40.123456Z",
     updated_at="2022-05-16T01:08:41.493190Z",
 )
+```
+
+## Suite Section
+
+``` python
+from testlodge import CaseDetails
+
+
+case_dict: CaseDetails = dict(
+    id=123456,
+    project_id=234567,
+    suite_section_id=345678,
+    position=1,
+    last_saved_by_id=456789,
+    last_saved_by=user_dict,
+    created_at="2022-01-01T20:30:40.123456Z",
+    updated_at="2022-05-16T01:08:41.493190Z",
+    custom_fields=[],
+    requirements=[],
+    step_number='TC123',
+    title='test case 1',
+    description=None,
+    test_steps=None,
+    expected_result=None,
+)
+```
