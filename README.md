@@ -57,7 +57,19 @@ requirement_document_json: RequirementDocumentJSON = dict(
 
 ## Suite
 
-...
+``` python
+from testlodge import SuiteJSON
+
+
+suite_json: SuiteJSON = dict(
+    id=123456,
+    name='suite',
+    plan_id=None,
+    project_id=234567,
+    created_at="2022-01-01T20:30:40.123456Z",
+    updated_at="2022-05-16T01:08:41.493190Z",
+)
+```
 
 ## Suite Section
 
