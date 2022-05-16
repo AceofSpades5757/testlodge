@@ -1,3 +1,4 @@
+from testlodge.api.suite_section import SuiteSectionAPI
 from testlodge.client import Client
 from testlodge.models.case import CaseJSON
 from testlodge.models.custom_field import CustomFieldJSON
@@ -21,4 +22,6 @@ __all__ = [
     'SuiteSectionJSON',
     # Models - Case
     'CaseJSON',
+    # API - Suite Section
+    'SuiteSectionAPI',
 ]
