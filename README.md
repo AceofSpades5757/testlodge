@@ -38,3 +38,23 @@ user_dict: UserDetails = dict(
     updated_at="2022-05-16T01:08:41.493190Z",
 )
 ```
+
+## Suite
+
+...
+
+## Suite Section
+
+
+``` python
+from testlodge import SuiteSectionDetails
+
+
+suite_section_dict: SuiteSectionDetails = dict(
+    id=123456,
+    title='title',
+    suite_id=234567,
+    created_at="2022-01-01T20:30:40.123456Z",
+    updated_at="2022-05-16T01:08:41.493190Z",
+)
+```
