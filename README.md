@@ -86,6 +86,27 @@ suite_section_json: SuiteSectionJSON = dict(
 )
 ```
 
+### API
+
+``` python
+import os
+
+from testlodge import Client
+from testlodge import SuiteSectionListJSON
+
+
+tl = Client(
+    email='my.email@email.com',
+    api_key=os.environ['TESTLODGE_API_KEY'],
+    account_id=os.environ['TESTLODGE_ACCOUNT_ID'],
+)
+
+suite_section_json: SuiteSectionListJSON = tl.api.suite_section._list(
+    project_id=123456,
+    suite_id=234567,
+)
+```
+
 ## Case
 
 ``` python
