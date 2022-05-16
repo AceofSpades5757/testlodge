@@ -1,3 +1,4 @@
+from typing import List
 from typing import Optional
 from typing import TypedDict
 
@@ -30,4 +31,4 @@ class CaseJSON(TypedDict):
 class CaseListJSON(TypedDict):
 
     pagination: Pagination
-    steps: list[CaseJSON]
+    steps: List[CaseJSON]

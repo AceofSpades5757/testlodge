@@ -1,3 +1,4 @@
+from typing import Dict
 from typing import Optional
 
 from furl import Path as UrlPath
@@ -66,7 +67,7 @@ class CaseAPI(BaseAPI):
         project_id: Identifier,
         suite_id: Identifier,
         case_id: Identifier,
-        include: Optional[dict[str, str]] = None,
+        include: Optional[Dict[str, str]] = None,
     ) -> CaseJSON:
         """Get the details for a _case_.
 
