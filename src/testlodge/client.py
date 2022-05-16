@@ -1,20 +1,39 @@
+from types import SimpleNamespace
+
 import requests
 from furl import furl
 from furl.furl import furl as Url
 from requests import Response
 from testlodge._types import Identifier
+from testlodge.api.base import BaseAPI as API
+from testlodge.api.suite_section import SuiteSectionAPI
 
 
 class Client:
     """Represents a client accessing the TestLodge API."""
 
-    def __init__(self, email: str, api_key: str, account_id: Identifier):
+    def __init__(
+        self,
+        email: str,
+        api_key: str,
+        account_id: Identifier,
+        apis: list[type[API]] = None,
+    ):
+
+        if apis is None:
+            apis = [SuiteSectionAPI]
 
         self.email: str = email
         self.api_key: str = api_key
         self.account_id: Identifier = account_id
 
         self.history: list[Response] = []
+
+        # Initialize the APIs
+        self.api = SimpleNamespace()
+        for api in apis:
+            api_instance = api(client=self)
+            setattr(self.api, api.name, api_instance)
 
     @property
     def base_url(self) -> Url:
