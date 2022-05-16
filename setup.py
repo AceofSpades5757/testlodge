@@ -7,7 +7,7 @@ with open('README.md', 'r') as fin:
 
 setuptools.setup(
     name='testlodge',
-    version='0.0.4',
+    version='0.0.5',
     author='Kyle L. Davis',
     author_email='AceofSpades5757.github@gmail.com',
     url='https://github.com/AceofSpades5757/testlodge',
@@ -18,7 +18,7 @@ setuptools.setup(
     packages=setuptools.find_packages('src'),
     package_dir={'': 'src', 'testlodge': 'src/testlodge'},
     test_suite="tests",
-    python_requires='>=3.6',
+    python_requires='>=3.8',
     classifiers=[
         "Programming Language :: Python :: 3",
         'License :: OSI Approved :: MIT License',

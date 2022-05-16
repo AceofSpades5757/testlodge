@@ -22,3 +22,28 @@ tl = Client(
     account_id=os.environ['TESTLODGE_ACCOUNT_ID'],
 )
 ```
+
+## Users
+
+``` python
+import os
+
+from testlodge import Client
+from testlodge import UserDetails
+
+
+tl = Client(
+    email='my.email@email.com',
+    api_key=os.environ['TESTLODGE_API_KEY'],
+    account_id=os.environ['TESTLODGE_ACCOUNT_ID'],
+)
+
+user_dict: UserDetails = dict(
+    id=123456,
+    firstname='First',
+    lastname='Last',
+    email'user@email.com',
+    created_at="2022-01-01T20:30:40.123456Z",
+    updated_at="2022-05-16T01:08:41.493190Z",
+)
+```
