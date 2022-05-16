@@ -1,16 +1,21 @@
 from testlodge.client import Client
-from testlodge.models.requirements import RequirementDocumentDetails
-from testlodge.models.suite_section import SuiteSectionDetails
-from testlodge.models.user import UserDetails
+from testlodge.models.case import CaseJSON
+from testlodge.models.requirements import RequirementDocumentJSON
+from testlodge.models.suite_section import SuiteSectionJSON
+from testlodge.models.user import UserJSON
 
 
 __all__ = [
     # Client
     'Client',
     # Models - User
-    'UserDetails',
+    'UserJSON',
     # Models - Requirement Documents
-    'RequirementDocumentDetails',
+    'RequirementDocumentJSON',
+    # Models - Suite
+    # 'SuiteJSON',
     # Models - Suite Section
-    'SuiteSectionDetails',
+    'SuiteSectionJSON',
+    # Models - Case
+    'CaseJSON',
 ]

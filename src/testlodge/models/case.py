@@ -3,23 +3,23 @@ from typing import TypedDict
 
 from testlodge._types import DateTimeStr
 from testlodge._types import Pagination
-from testlodge.models.custom_field import CustomField
-from testlodge.models.requirements import RequirementDocumentDetails
-from testlodge.models.user import UserDetails
+from testlodge.models.custom_field import CustomFieldJSON
+from testlodge.models.requirements import RequirementDocumentJSON
+from testlodge.models.user import UserJSON
 
 
-class CaseDetails(TypedDict):
+class CaseJSON(TypedDict):
 
     id: int
     project_id: int
     suite_section_id: int
     position: int
     last_saved_by_id: int
-    last_saved_by: UserDetails
+    last_saved_by: UserJSON
     created_at: DateTimeStr
     updated_at: DateTimeStr
-    custom_fields: list[CustomField]
-    requirements: list[RequirementDocumentDetails]
+    custom_fields: list[CustomFieldJSON]
+    requirements: list[RequirementDocumentJSON]
     step_number: str
     title: str
     description: Optional[str]
@@ -27,7 +27,7 @@ class CaseDetails(TypedDict):
     expected_result: Optional[str]
 
 
-class CaseListDetails(TypedDict):
+class CaseListJSON(TypedDict):
 
     pagination: Pagination
-    steps: list[CaseDetails]
+    steps: list[CaseJSON]

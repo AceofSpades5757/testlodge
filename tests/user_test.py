@@ -1,6 +1,6 @@
 import unittest
 
-from testlodge import UserDetails
+from testlodge import UserJSON
 
 
 class TestUser(unittest.TestCase):
@@ -8,7 +8,7 @@ class TestUser(unittest.TestCase):
 
     def test_simple(self):
 
-        user_dict: UserDetails = dict(
+        user_dict: UserJSON = dict(
             id=123456,
             firstname='First',
             lastname='Last',
@@ -18,4 +18,4 @@ class TestUser(unittest.TestCase):
         )
 
         # This operation is not supported at this time.
-        # self.assertTrue(isinstance(user_dict, UserDetails))
+        # self.assertTrue(isinstance(user_dict, UserJSON))

@@ -3,7 +3,7 @@ from typing import TypedDict
 from testlodge._types import DateTimeStr
 
 
-class UserDetails(TypedDict):
+class UserJSON(TypedDict):
 
     id: int
     firstname: str

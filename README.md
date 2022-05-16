@@ -26,10 +26,10 @@ tl = Client(
 ## Users
 
 ``` python
-from testlodge import UserDetails
+from testlodge import UserJSON
 
 
-user_dict: UserDetails = dict(
+user_dict: UserJSON = dict(
     id=123456,
     firstname='First',
     lastname='Last',
@@ -42,10 +42,10 @@ user_dict: UserDetails = dict(
 ## Requirement Documents
 
 ``` python
-from testlodge import RequirementDocumentDetails
+from testlodge import RequirementDocumentJSON
 
 
-requirement_document_dict: RequirementDocumentDetails = dict(
+requirement_document_dict: RequirementDocumentJSON = dict(
     id=123456,
     title='title',
     should_version: True,
@@ -62,10 +62,10 @@ requirement_document_dict: RequirementDocumentDetails = dict(
 ## Suite Section
 
 ``` python
-from testlodge import SuiteSectionDetails
+from testlodge import SuiteSectionJSON
 
 
-suite_section_dict: SuiteSectionDetails = dict(
+suite_section_dict: SuiteSectionJSON = dict(
     id=123456,
     title='title',
     suite_id=234567,
@@ -77,10 +77,10 @@ suite_section_dict: SuiteSectionDetails = dict(
 ## Suite Section
 
 ``` python
-from testlodge import CaseDetails
+from testlodge import CaseJSON
 
 
-case_dict: CaseDetails = dict(
+case_dict: CaseJSON = dict(
     id=123456,
     project_id=234567,
     suite_section_id=345678,

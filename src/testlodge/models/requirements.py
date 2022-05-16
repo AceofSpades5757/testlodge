@@ -3,7 +3,7 @@ from typing import TypedDict
 from testlodge._types import DateTimeStr
 
 
-class RequirementDocumentDetails(TypedDict):
+class RequirementDocumentJSON(TypedDict):
 
     id: int
     title: str
