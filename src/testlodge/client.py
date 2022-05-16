@@ -19,7 +19,7 @@ class Client:
     @property
     def base_url(self) -> Url:
 
-        return furl(f'https://api.testlodge.com/v1/account/{self.account_id}/')
+        return furl(f'https://api.testlodge.com/v1/account/{self.account_id}')
 
     def _request(self, method: str, url: str, *args, **kwargs) -> Response:
         """Wrap requests.request to add handlers for response,
