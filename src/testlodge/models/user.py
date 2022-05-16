@@ -1,3 +1,4 @@
+from typing import List
 from typing import TypedDict
 
 from testlodge._types import DateTimeStr
@@ -17,4 +18,4 @@ class UserJSON(TypedDict):
 class UserListJSON(TypedDict):
 
     pagination: Pagination
-    users: list[UserJSON]
+    users: List[UserJSON]

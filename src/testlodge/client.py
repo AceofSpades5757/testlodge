@@ -1,4 +1,6 @@
 from types import SimpleNamespace
+from typing import List
+from typing import Type
 
 import requests
 from furl import furl
@@ -17,7 +19,7 @@ class Client:
         email: str,
         api_key: str,
         account_id: Identifier,
-        apis: list[type[API]] = None,
+        apis: List[Type[API]] = None,
     ):
 
         if apis is None:
@@ -27,7 +29,7 @@ class Client:
         self.api_key: str = api_key
         self.account_id: Identifier = account_id
 
-        self.history: list[Response] = []
+        self.history: List[Response] = []
 
         # Initialize the APIs
         self.api = SimpleNamespace()

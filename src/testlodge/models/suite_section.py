@@ -1,3 +1,4 @@
+from typing import List
 from typing import TypedDict
 
 from testlodge._types import DateTimeStr
@@ -16,4 +17,4 @@ class SuiteSectionJSON(TypedDict):
 class SuiteSectionListJSON(TypedDict):
 
     pagination: Pagination
-    suite_sections: list[SuiteSectionJSON]
+    suite_sections: List[SuiteSectionJSON]

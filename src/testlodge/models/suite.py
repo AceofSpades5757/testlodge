@@ -1,3 +1,4 @@
+from typing import List
 from typing import Optional
 from typing import TypedDict
 
@@ -18,4 +19,4 @@ class SuiteJSON(TypedDict):
 class SuiteListJSON(TypedDict):
 
     pagination: Pagination
-    suites: list[SuiteJSON]
+    suites: List[SuiteJSON]

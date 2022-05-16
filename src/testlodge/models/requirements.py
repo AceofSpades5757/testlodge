@@ -1,3 +1,4 @@
+from typing import List
 from typing import TypedDict
 
 from testlodge._types import DateTimeStr
@@ -17,4 +18,4 @@ class RequirementDocumentJSON(TypedDict):
 class RequirementDocumentListJSON(TypedDict):
 
     pagination: Pagination
-    requirement_documents: list[RequirementDocumentJSON]
+    requirement_documents: List[RequirementDocumentJSON]
