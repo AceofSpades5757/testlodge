@@ -9,9 +9,14 @@ from testlodge._types import Pagination
 from testlodge.client import Client
 from testlodge.models.custom_field import CustomField
 from testlodge.models.custom_field import CustomFieldJSON
+from testlodge.models.project import AnyProject
+from testlodge.models.project import LazyProject
 from testlodge.models.project import Project
+from testlodge.models.requirement import Requirement
 from testlodge.models.requirement_document import RequirementDocumentJSON
 from testlodge.models.requirements import RequirementDocument
+from testlodge.models.suite_section import AnySuiteSection
+from testlodge.models.suite_section import LazySuiteSection
 from testlodge.models.suite_section import SuiteSection
 from testlodge.models.user import User
 from testlodge.models.user import UserJSON
@@ -54,8 +59,8 @@ class Case(BaseModel):
         steps: str,
         expected_results: str,
         position: int,
-        project: Project,
-        suite_section: SuiteSection,
+        project: AnyProject,
+        suite_section: AnySuiteSection,
         last_saved_by: User,
         created_at: datetime,
         updated_at: datetime,
@@ -119,16 +124,23 @@ class Case(BaseModel):
     @classmethod
     def from_json(cls, json: CaseJSON, client: Client = None) -> Case:
 
-        # TODO
         # custom_fields: List[CustomFieldJSON]
-        # TODO
-        # requirements: List[RequirementDocumentJSON]
+        # NOT Document
+        # requirements: List[RequirementJSON]
 
-        # project = Project.from_json(id=project_id)
-        # suite_section = SuiteSection.from_json(id=suite_section_id)
-        project = LazyProject.from_json(id=project_id)
-        suite_section = LazySuiteSection.from_json(id=suite_section_id)
-        last_saved_by = User.from_json(last_saved_by)
+        custom_fields: List[CustomField] = [
+            CustomField.from_json(cf_json) for cf_json in json['custom_fields']
+        ]
+        requirements: List[Requirement] = [
+            CustomField.from_json(cf_json) for cf_json in json['requirements']
+        ]
+
+        project = LazyProject(id=json['project_id'], client=client)
+        suite_section = LazySuiteSection(
+            id=json['suite_section_id'], client=client
+        )
+        # last_saved_by_id: int
+        last_saved_by = User.from_json(json['last_saved_by'])
 
         created_at = cls.str_to_datetime(json['created_at'])
         updated_at = cls.str_to_datetime(json['updated_at'])
@@ -139,12 +151,14 @@ class Case(BaseModel):
             step_number=json['step_number'],
             title=json['title'],
             description=json['description'],
-            test_steps=json['test_steps'],
-            expected_result=json['expected_result'],
+            steps=json['test_steps'],
+            expected_results=json['expected_result'],
             project=project,
             suite_section=suite_section,
             last_saved_by=last_saved_by,
             created_at=created_at,
             updated_at=updated_at,
             client=client,
+            custom_fields=custom_fields,
+            requirements=requirements,
         )
