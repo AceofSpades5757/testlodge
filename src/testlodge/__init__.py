@@ -9,6 +9,8 @@ from testlodge.models.project import ProjectJSON
 from testlodge.models.project import ProjectListJSON
 from testlodge.models.requirement_document import RequirementDocumentJSON
 from testlodge.models.requirement_document import RequirementDocumentListJSON
+from testlodge.models.run import RunJSON
+from testlodge.models.run import RunListJSON
 from testlodge.models.suite import SuiteJSON
 from testlodge.models.suite import SuiteListJSON
 from testlodge.models.suite_section import SuiteSectionJSON
@@ -45,4 +47,7 @@ __all__ = [
     # Models - Plan
     'PlanJSON',
     'PlanListJSON',
+    # Models - Run
+    'RunJSON',
+    'RunListJSON',
 ]
