@@ -5,7 +5,7 @@ from typing import TypedDict
 from testlodge._types import DateTimeStr
 from testlodge._types import Pagination
 from testlodge.models.custom_field import CustomFieldJSON
-from testlodge.models.requirements import RequirementDocumentJSON
+from testlodge.models.requirement_document import RequirementDocumentJSON
 from testlodge.models.user import UserJSON
 
 
