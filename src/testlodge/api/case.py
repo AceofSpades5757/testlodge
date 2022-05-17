@@ -94,7 +94,9 @@ class CaseAPI(BaseAPI):
 
         method = 'GET'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}/suites/{suite_id}/steps/{case_id}.json'  # noqa: E501
+            f'/projects/{project_id}'
+            f'/suites/{suite_id}'
+            f'/steps/{case_id}.json'
         )
 
         if include is not None:
@@ -105,9 +107,9 @@ class CaseAPI(BaseAPI):
         response: Response = self.client._request(
             method=method, url=url, params=include
         )
-        case_details: CaseJSON = response.json()
+        case_json: CaseJSON = response.json()
 
-        return case_details
+        return case_json
 
     def _create(
         self,
@@ -152,9 +154,9 @@ class CaseAPI(BaseAPI):
         response: Response = self.client._request(
             method=method, url=url, json=data
         )
-        case_details: CaseJSON = response.json()
+        case_json: CaseJSON = response.json()
 
-        return case_details
+        return case_json
 
     def _update(
         self,
@@ -173,7 +175,7 @@ class CaseAPI(BaseAPI):
             The ID of the suite.
         case_id: Identifier
             The ID of the test case.
-        step: dict[CaseJSON]
+        step: CaseJSON
 
             title: str
             description: str, optional
@@ -191,9 +193,9 @@ class CaseAPI(BaseAPI):
         response: Response = self.client._request(
             method=method, url=url, json=step
         )
-        case_details: CaseJSON = response.json()
+        case_json: CaseJSON = response.json()
 
-        return case_details
+        return case_json
 
     def _delete(
         self, project_id: Identifier, suite_id: Identifier, case_id: Identifier
