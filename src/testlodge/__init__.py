@@ -3,6 +3,8 @@ from testlodge.client import Client
 from testlodge.models.case import CaseJSON
 from testlodge.models.case import CaseListJSON
 from testlodge.models.custom_field import CustomFieldJSON
+from testlodge.models.plan import PlanJSON
+from testlodge.models.plan import PlanListJSON
 from testlodge.models.project import ProjectJSON
 from testlodge.models.project import ProjectListJSON
 from testlodge.models.requirements import RequirementDocumentJSON
@@ -40,4 +42,7 @@ __all__ = [
     # Models - Case
     'CaseJSON',
     'CaseListJSON',
+    # Models - Plan
+    'PlanJSON',
+    'PlanListJSON',
 ]

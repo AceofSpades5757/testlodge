@@ -9,6 +9,7 @@ from requests import Response
 from testlodge.api.base import BaseAPI as API
 from testlodge.api.case import CaseAPI
 from testlodge.api.custom_field import CustomFieldAPI
+from testlodge.api.plan import PlanAPI
 from testlodge.api.project import ProjectAPI
 from testlodge.api.suite import SuiteAPI
 from testlodge.api.suite_section import SuiteSectionAPI
@@ -34,6 +35,7 @@ class Client:
                 SuiteSectionAPI,
                 SuiteAPI,
                 CaseAPI,
+                PlanAPI,
             ]
 
         self.email: str = email
