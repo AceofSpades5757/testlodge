@@ -8,6 +8,9 @@ from furl.furl import furl as Url
 from requests import Response
 from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI as API
+from testlodge.api.case import CaseAPI
+from testlodge.api.custom_field import CustomFieldAPI
+from testlodge.api.project import ProjectAPI
 from testlodge.api.suite_section import SuiteSectionAPI
 from testlodge.api.user import UserAPI
 
@@ -27,6 +30,9 @@ class Client:
             apis = [
                 SuiteSectionAPI,
                 UserAPI,
+                CaseAPI,
+                CustomFieldAPI,
+                ProjectAPI,
             ]
 
         self.email: str = email
