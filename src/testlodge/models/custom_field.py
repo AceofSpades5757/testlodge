@@ -15,3 +15,8 @@ class CustomFieldListJSON(TypedDict):
     requirement_custom_fields: List[CustomFieldJSON]
     step_custom_fields: List[CustomFieldJSON]
     executed_step_custom_fields: List[CustomFieldJSON]
+
+
+class CustomField:
+    # TODO
+    ...
