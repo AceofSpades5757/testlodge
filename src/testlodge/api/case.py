@@ -4,7 +4,6 @@ from typing import Optional
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
-from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI
 from testlodge.models.case import CaseJSON
 from testlodge.models.case import CaseListJSON
@@ -26,20 +25,20 @@ class CaseAPI(BaseAPI):
 
     def _list(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        suite_section_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        suite_section_id: int,
         page: int = 1,
     ) -> CaseListJSON:
         """Paginated list of all cases inside a suite section.
 
         Parameters
         ----------
-        project_id: Identifier
+        project_id: int
             The ID of the project.
-        suite_id: Identifier
+        suite_id: int
             The ID of the suite.
-        suite_section_id: Identifier
+        suite_section_id: int
             The ID of the suite section.
         page: int, default=1
             Default: 1
@@ -66,20 +65,20 @@ class CaseAPI(BaseAPI):
 
     def _show(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        case_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        case_id: int,
         include: Optional[Dict[str, str]] = None,
     ) -> CaseJSON:
         """Get the details for a _case_.
 
         Parameters
         ----------
-        project_id: Identifier
+        project_id: int
             The ID of the project.
-        suite_id: Identifier
+        suite_id: int
             The ID of the suite.
-        case_id: Identifier
+        case_id: int
             The ID of the test case.
         include: dict[str], optional
             An array of strings, representing the additional options to include
@@ -113,18 +112,18 @@ class CaseAPI(BaseAPI):
 
     def _create(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
+        project_id: int,
+        suite_id: int,
         step: CaseJSON,
-        suite_section_id: Optional[Identifier] = None,
+        suite_section_id: Optional[int] = None,
     ) -> CaseJSON:
         """Create a test case.
 
         Parameters
         ----------
-        project_id: Identifier
+        project_id: int
             The ID of the project.
-        suite_id: Identifier
+        suite_id: int
             The ID of the suite.
         step: dict[CaseJSON]
 
@@ -135,7 +134,7 @@ class CaseAPI(BaseAPI):
             custom_fields: list[CustomField], optional
                 Custom fields of the test case.
 
-        suite_section_id: Identifier, optional
+        suite_section_id: int, optional
             Default: The top suite section in the test suite, or creates one if
             none exists.
             The ID of the suite section.
@@ -160,20 +159,20 @@ class CaseAPI(BaseAPI):
 
     def _update(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        case_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        case_id: int,
         step: CaseJSON,
     ) -> CaseJSON:
         """Update a test case.
 
         Parameters
         ----------
-        project_id: Identifier
+        project_id: int
             The ID of the project.
-        suite_id: Identifier
+        suite_id: int
             The ID of the suite.
-        case_id: Identifier
+        case_id: int
             The ID of the test case.
         step: CaseJSON
 
@@ -197,18 +196,16 @@ class CaseAPI(BaseAPI):
 
         return case_json
 
-    def _delete(
-        self, project_id: Identifier, suite_id: Identifier, case_id: Identifier
-    ) -> None:
+    def _delete(self, project_id: int, suite_id: int, case_id: int) -> None:
         """Delete a test case.
 
         Parameters
         ----------
-        project_id: Identifier
+        project_id: int
             The ID of the project.
-        suite_id: Identifier
+        suite_id: int
             The ID of the suite.
-        case_id: Identifier
+        case_id: int
             The ID of the test case.
         """
 
