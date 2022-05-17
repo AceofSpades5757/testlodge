@@ -7,14 +7,14 @@ from typing import TypedDict
 from testlodge._types import DateTimeStr
 from testlodge._types import Pagination
 from testlodge.client import Client
+from testlodge.models.base import BaseModel
+from testlodge.models.case import Case
 from testlodge.models.custom_field import CustomField
 from testlodge.models.custom_field import CustomFieldJSON
 from testlodge.models.project import AnyProject
 from testlodge.models.project import LazyProject
-from testlodge.models.project import Project
 from testlodge.models.requirement import Requirement
 from testlodge.models.requirement_document import RequirementDocumentJSON
-from testlodge.models.requirements import RequirementDocument
 from testlodge.models.suite_section import AnySuiteSection
 from testlodge.models.suite_section import LazySuiteSection
 from testlodge.models.suite_section import SuiteSection
