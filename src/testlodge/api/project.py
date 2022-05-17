@@ -4,7 +4,6 @@ from typing import Optional
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
-from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI
 from testlodge.models.project import ProjectJSON
 from testlodge.models.project import ProjectListJSON
@@ -100,7 +99,7 @@ class ProjectAPI(BaseAPI):
         method = 'POST'
         url: Url = self.client.base_url / UrlPath('/projects.json')
 
-        data: dict = dict(name=name)
+        data: Dict = dict(name=name)
         if description is not None:
             data['description'] = description
         if issue_tracker_credential_id is not None:

@@ -6,7 +6,6 @@ import requests
 from furl import furl
 from furl.furl import furl as Url
 from requests import Response
-from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI as API
 from testlodge.api.case import CaseAPI
 from testlodge.api.custom_field import CustomFieldAPI
@@ -23,7 +22,7 @@ class Client:
         self,
         email: str,
         api_key: str,
-        account_id: Identifier,
+        account_id: int,
         apis: List[Type[API]] = None,
     ):
 
@@ -39,7 +38,7 @@ class Client:
 
         self.email: str = email
         self.api_key: str = api_key
-        self.account_id: Identifier = account_id
+        self.account_id: int = account_id
 
         self.history: List[Response] = []
 

@@ -1,7 +1,6 @@
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
-from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI
 from testlodge.models.custom_field import CustomFieldListJSON
 
@@ -18,7 +17,7 @@ class CustomFieldAPI(BaseAPI):
 
     def _list(
         self,
-        project_id: Identifier,
+        project_id: int,
     ) -> CustomFieldListJSON:
         """List all custom fields in a project.
 

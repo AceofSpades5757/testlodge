@@ -1,7 +1,6 @@
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
-from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI
 from testlodge.models.suite_section import SuiteSectionJSON
 from testlodge.models.suite_section import SuiteSectionListJSON
@@ -23,7 +22,7 @@ class SuiteSectionAPI(BaseAPI):
     name: str = 'suite_section'
 
     def _list(
-        self, project_id: Identifier, suite_id: Identifier, page: int = 1
+        self, project_id: int, suite_id: int, page: int = 1
     ) -> SuiteSectionListJSON:
         """Paginated list of all suite sections inside a suite.
 
@@ -58,9 +57,9 @@ class SuiteSectionAPI(BaseAPI):
 
     def _show(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        suite_section_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        suite_section_id: int,
     ) -> SuiteSectionJSON:
         """Get the details for a _suite section_.
 
@@ -89,8 +88,8 @@ class SuiteSectionAPI(BaseAPI):
 
     def _create(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
+        project_id: int,
+        suite_id: int,
         suite_section: SuiteSectionJSON,
     ) -> SuiteSectionJSON:
         """Create a new _suite section_.
@@ -125,9 +124,9 @@ class SuiteSectionAPI(BaseAPI):
 
     def _update(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        suite_section_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        suite_section_id: int,
         suite_section: SuiteSectionJSON,
     ) -> SuiteSectionJSON:
         """Update a _suite section_.
@@ -164,9 +163,9 @@ class SuiteSectionAPI(BaseAPI):
 
     def _delete(
         self,
-        project_id: Identifier,
-        suite_id: Identifier,
-        suite_section_id: Identifier,
+        project_id: int,
+        suite_id: int,
+        suite_section_id: int,
     ) -> None:
         """Delete a _suite section_.
 

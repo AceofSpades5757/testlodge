@@ -1,9 +1,7 @@
 from typing import Optional
 from typing import TypedDict
-from typing import Union
 
 
-Identifier = Union[str, int]
 DateTimeStr = str  # Type Alias
 
 Pagination = TypedDict(
