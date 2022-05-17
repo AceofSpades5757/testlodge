@@ -13,11 +13,13 @@ from testlodge.models.case import CaseListJSON
 class CaseAPI(BaseAPI):
     """API for test cases.
 
-
     Endpoints
     ---------
     * List
-    * TODO Delete
+    * Show
+    * Create
+    * Update
+    * Delete
     """
 
     name: str = 'case'
