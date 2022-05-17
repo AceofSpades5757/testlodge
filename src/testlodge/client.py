@@ -9,6 +9,7 @@ from requests import Response
 from testlodge._types import Identifier
 from testlodge.api.base import BaseAPI as API
 from testlodge.api.suite_section import SuiteSectionAPI
+from testlodge.api.user import UserAPI
 
 
 class Client:
@@ -23,7 +24,10 @@ class Client:
     ):
 
         if apis is None:
-            apis = [SuiteSectionAPI]
+            apis = [
+                SuiteSectionAPI,
+                UserAPI,
+            ]
 
         self.email: str = email
         self.api_key: str = api_key
