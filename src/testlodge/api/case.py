@@ -87,7 +87,7 @@ class CaseAPI(BaseAPI):
             steps_uploads: str
                 Any file that has been uploaded and associated with the test
                 (urls in the response will only be available for ~30 seconds).
-            requirements: ?
+            requirements: list[RequirementJSON]
                 Any requirements that have been associated to the case.
         """
 
