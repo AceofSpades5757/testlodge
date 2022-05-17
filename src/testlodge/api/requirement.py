@@ -1,8 +1,10 @@
+from typing import List
+from typing import Optional
+
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.api.common import SortOrder
 from testlodge.models.requirement import RequirementJSON
 from testlodge.models.requirement import RequirementListJSON
 
@@ -94,15 +96,16 @@ class RequirementAPI(BaseAPI):
             f'/requirements/{requirement_id}.json'
         )
 
+        params = {}
         if include is not None:
             raise NotImplementedError('Not implemented yet.')
         else:
-            include = {}
+            ...
 
         response: Response = self.client._request(
             method=method,
             url=url,
-            params=include,
+            params=params,
         )
         suite_json: RequirementJSON = response.json()
 
