@@ -1,22 +1,10 @@
-from enum import auto
-from enum import IntEnum
-from typing import Dict
-from typing import Optional
-
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
+from testlodge.api.common import SortOrder
 from testlodge.models.suite import SuiteJSON
 from testlodge.models.suite import SuiteListJSON
-
-
-class SortOrder(IntEnum):
-    """Method to sort by."""
-
-    CREATED_AT = auto()
-    UPDATED_AT = auto()
-    NAME = auto()
 
 
 class SuiteAPI(BaseAPI):
