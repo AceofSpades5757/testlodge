@@ -11,6 +11,7 @@ from testlodge.api.case import CaseAPI
 from testlodge.api.custom_field import CustomFieldAPI
 from testlodge.api.plan import PlanAPI
 from testlodge.api.project import ProjectAPI
+from testlodge.api.requirement import RequirementAPI
 from testlodge.api.run import RunAPI
 from testlodge.api.suite import SuiteAPI
 from testlodge.api.suite_section import SuiteSectionAPI
@@ -38,6 +39,7 @@ class Client:
                 CaseAPI,
                 PlanAPI,
                 RunAPI,
+                RequirementAPI,
             ]
 
         self.email: str = email
