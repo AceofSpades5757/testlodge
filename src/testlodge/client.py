@@ -11,6 +11,7 @@ from testlodge.api.base import BaseAPI as API
 from testlodge.api.case import CaseAPI
 from testlodge.api.custom_field import CustomFieldAPI
 from testlodge.api.project import ProjectAPI
+from testlodge.api.suite import SuiteAPI
 from testlodge.api.suite_section import SuiteSectionAPI
 from testlodge.api.user import UserAPI
 
@@ -28,11 +29,12 @@ class Client:
 
         if apis is None:
             apis = [
-                SuiteSectionAPI,
                 UserAPI,
-                CaseAPI,
                 CustomFieldAPI,
                 ProjectAPI,
+                SuiteSectionAPI,
+                SuiteAPI,
+                CaseAPI,
             ]
 
         self.email: str = email
