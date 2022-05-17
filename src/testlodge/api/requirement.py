@@ -10,7 +10,7 @@ from testlodge.models.requirement import RequirementListJSON
 
 
 class RequirementAPI(BaseAPI):
-    """API for test suites.
+    """API for requirements.
 
     Endpoints
     ---------
