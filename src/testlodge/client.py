@@ -72,3 +72,9 @@ class Client:
         self.history.append(response)
 
         return response
+
+    def project(self, project_id: int) -> Project:
+        ...
+
+    def suite_section(self, suite_section_id: int) -> SuiteSection:
+        ...
