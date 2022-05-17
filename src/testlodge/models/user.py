@@ -19,3 +19,8 @@ class UserListJSON(TypedDict):
 
     pagination: Pagination
     users: List[UserJSON]
+
+
+class User:
+    # TODO
+    ...
