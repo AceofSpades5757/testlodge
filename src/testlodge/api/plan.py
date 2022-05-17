@@ -1,14 +1,17 @@
+from typing import Dict
+from typing import Optional
+
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
 from testlodge.api.common import SortOrder
-from testlodge.models.suite import SuiteJSON
-from testlodge.models.suite import SuiteListJSON
+from testlodge.models.plan import PlanJSON
+from testlodge.models.plan import PlanListJSON
 
 
-class SuiteAPI(BaseAPI):
-    """API for test suites.
+class PlanAPI(BaseAPI):
+    """API for test plans.
 
     Endpoints
     ---------
@@ -19,15 +22,15 @@ class SuiteAPI(BaseAPI):
     * Delete
     """
 
-    name: str = 'suite'
+    name: str = 'plan'
 
     def _list(
         self,
         project_id: int,
         page: int = 1,
         order: SortOrder = SortOrder.CREATED_AT,
-    ) -> SuiteListJSON:
-        """Paginated list of all suites in a project.
+    ) -> PlanListJSON:
+        """Paginated list of all plans in a project.
 
         Parameters
         ----------
@@ -38,12 +41,12 @@ class SuiteAPI(BaseAPI):
             The number of the page to return.
         order: SortOrder, default=SortOrder.CREATED_AT
             Default: SortOrder.CREATED_AT
-            Method to sort the list of suites.
+            Method to sort the list.
         """
 
         method = 'GET'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' '/suites.json'
+            f'/projects/{project_id}' 'plans.json'
         )
         params: dict = {}
         if page != 1:
@@ -54,126 +57,119 @@ class SuiteAPI(BaseAPI):
         response: Response = self.client._request(
             method=method, url=url, params=params
         )
-        suite_list: SuiteListJSON = response.json()
+        plan_list: PlanListJSON = response.json()
 
-        return suite_list
+        return plan_list
 
     def _show(
         self,
         project_id: int,
-        suite_id: int,
-    ) -> SuiteJSON:
-        """Get the details for a suite.
+        plan_id: int,
+    ) -> PlanJSON:
+        """Get the details for a plan.
 
         Parameters
         ----------
         project_id: int
             The ID of the project.
-        suite_id: int
-            The ID of the suite.
+        plan_id: int
+            The ID of the plan.
         """
 
         method = 'GET'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/suites/{suite_id}.json'
+            f'/projects/{project_id}' f'/plans/{plan_id}.json'
         )
 
         response: Response = self.client._request(
             method=method,
             url=url,
         )
-        suite_json: SuiteJSON = response.json()
+        plan_json: PlanJSON = response.json()
 
-        return suite_json
+        return plan_json
 
     def _create(
         self,
         project_id: int,
-        suite: SuiteJSON,
-    ) -> SuiteJSON:
-        """Create a suite.
+        plan: PlanJSON,
+    ) -> PlanJSON:
+        """Create a plan.
 
         Parameters
         ----------
         project_id: int
             The ID of the project.
-        suite: SuiteJSON
+        plan: PlanJSON
 
             name: str
-                Name of the suite.
-            plan_id: int, optional
-                Associated test plan.
+                Name of the plan
         """
 
         method = 'POST'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' '/suites.json'
+            f'/projects/{project_id}' 'plans.json'
         )
 
-        data = dict(suite=suite)
+        data = dict(plan=plan)
 
         response: Response = self.client._request(
             method=method, url=url, json=data
         )
-        suite_json: SuiteJSON = response.json()
+        plan_json: PlanJSON = response.json()
 
-        return suite_json
+        return plan_json
 
     def _update(
         self,
         project_id: int,
-        suite_id: int,
-        suite: SuiteJSON,
-    ) -> SuiteJSON:
-        """Update a suite.
+        plan_id: int,
+        plan: PlanJSON,
+    ) -> PlanJSON:
+        """Update a plan.
 
         Parameters
         ----------
         project_id: int
             The ID of the project.
-        suite_id: int
-            The ID of the suite.
-        suite: SuiteJSON
+        plan_id: int
+            The ID of the plan.
+        plan: PlanJSON
 
             name: str
-                Name of the suite.
-            plan_id: int
-                Associated test plan.
+                Name of the plan
         """
 
         method = 'PATCH'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/suites/{suite_id}.json'
+            f'/projects/{project_id}' f'/plans/{plan_id}.json'
         )
-        data = dict(suite=suite)
+
+        data = dict(plan=plan)
 
         response: Response = self.client._request(
             method=method,
             url=url,
             json=data,
         )
-        suite_json: SuiteJSON = response.json()
+        plan_json: PlanJSON = response.json()
 
-        return suite_json
+        return plan_json
 
-    def _delete(
-        self,
-        project_id: int,
-        suite_id: int,
-    ) -> None:
-        """Delete a suite.
+    def _delete(self, project_id: int, plan_id: int) -> None:
+        """Delete a plan.
 
         Parameters
         ----------
         project_id: int
             The ID of the project.
-        suite_id: int
-            The ID of the suite.
+        plan_id: int
+            The ID of the plan.
         """
 
         method = 'DELETE'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/suites/{suite_id}.json'
+            f'/projects/{project_id}' f'/plans/{plan_id}.json'
         )
 
         response: Response = self.client._request(method=method, url=url)
