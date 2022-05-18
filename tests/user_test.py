@@ -1,6 +1,6 @@
 import unittest
 
-from testlodge import UserJSON
+from testlodge.typing import UserJSON
 
 
 class TestUser(unittest.TestCase):

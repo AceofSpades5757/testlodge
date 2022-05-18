@@ -12,6 +12,8 @@ from testlodge.typing.requirement_document import RequirementDocumentJSON
 from testlodge.typing.requirement_document import RequirementDocumentListJSON
 from testlodge.typing.run import RunJSON
 from testlodge.typing.run import RunListJSON
+from testlodge.typing.shared import DateTimeStr
+from testlodge.typing.shared import Pagination
 from testlodge.typing.suite import SuiteJSON
 from testlodge.typing.suite import SuiteListJSON
 from testlodge.typing.suite_section import SuiteSectionJSON
@@ -41,4 +43,6 @@ __all__ = [
     'SuiteSectionListJSON',
     'UserJSON',
     'UserListJSON',
+    'DateTimeStr',
+    'Pagination',
 ]

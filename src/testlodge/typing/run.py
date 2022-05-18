@@ -2,8 +2,8 @@ from typing import List
 from typing import Optional
 from typing import TypedDict
 
-from testlodge._types import DateTimeStr
-from testlodge._types import Pagination
+from testlodge.typing.shared import DateTimeStr
+from testlodge.typing.shared import Pagination
 
 
 class RunJSON(TypedDict):

@@ -2,10 +2,10 @@ from typing import List
 from typing import Optional
 from typing import TypedDict
 
-from testlodge._types import DateTimeStr
-from testlodge._types import Pagination
 from testlodge.typing.custom_field import CustomFieldJSON
 from testlodge.typing.requirement_document import RequirementDocumentJSON
+from testlodge.typing.shared import DateTimeStr
+from testlodge.typing.shared import Pagination
 from testlodge.typing.user import UserJSON
 
 
