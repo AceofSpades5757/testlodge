@@ -2,8 +2,8 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.suite_section import SuiteSectionJSON
-from testlodge.models.suite_section import SuiteSectionListJSON
+from testlodge.typing.suite_section import SuiteSectionJSON
+from testlodge.typing.suite_section import SuiteSectionListJSON
 
 
 class SuiteSectionAPI(BaseAPI):

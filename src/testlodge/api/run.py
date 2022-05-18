@@ -6,8 +6,8 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.run import RunJSON
-from testlodge.models.run import RunListJSON
+from testlodge.typing.run import RunJSON
+from testlodge.typing.run import RunListJSON
 
 
 class SortRunOrder(IntEnum):

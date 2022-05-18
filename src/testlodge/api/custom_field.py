@@ -2,7 +2,7 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.custom_field import CustomFieldListJSON
+from testlodge.typing.custom_field import CustomFieldListJSON
 
 
 class CustomFieldAPI(BaseAPI):

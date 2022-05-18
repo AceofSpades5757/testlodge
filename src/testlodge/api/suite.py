@@ -3,8 +3,8 @@ from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
 from testlodge.api.common import SortOrder
-from testlodge.models.suite import SuiteJSON
-from testlodge.models.suite import SuiteListJSON
+from testlodge.typing.suite import SuiteJSON
+from testlodge.typing.suite import SuiteListJSON
 
 
 class SuiteAPI(BaseAPI):

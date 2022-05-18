@@ -2,7 +2,7 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.user import UserListJSON
+from testlodge.typing.user import UserListJSON
 
 
 class UserAPI(BaseAPI):

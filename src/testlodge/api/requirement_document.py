@@ -7,8 +7,8 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.requirement_document import RequirementDocumentJSON
-from testlodge.models.requirement_document import RequirementDocumentListJSON
+from testlodge.typing.requirement_document import RequirementDocumentJSON
+from testlodge.typing.requirement_document import RequirementDocumentListJSON
 
 
 class SortRequirementDocumentOrder(IntEnum):

@@ -5,8 +5,8 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.requirement import RequirementJSON
-from testlodge.models.requirement import RequirementListJSON
+from testlodge.typing.requirement import RequirementJSON
+from testlodge.typing.requirement import RequirementListJSON
 
 
 class RequirementAPI(BaseAPI):

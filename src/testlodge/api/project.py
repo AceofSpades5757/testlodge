@@ -5,8 +5,8 @@ from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.models.project import ProjectJSON
-from testlodge.models.project import ProjectListJSON
+from testlodge.typing.project import ProjectJSON
+from testlodge.typing.project import ProjectListJSON
 
 
 class ProjectAPI(BaseAPI):

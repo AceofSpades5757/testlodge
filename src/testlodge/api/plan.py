@@ -6,8 +6,8 @@ from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
 from testlodge.api.common import SortOrder
-from testlodge.models.plan import PlanJSON
-from testlodge.models.plan import PlanListJSON
+from testlodge.typing.plan import PlanJSON
+from testlodge.typing.plan import PlanListJSON
 
 
 class PlanAPI(BaseAPI):
