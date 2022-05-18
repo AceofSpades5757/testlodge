@@ -19,7 +19,7 @@ from testlodge.api.suite_section import SuiteSectionAPI
 from testlodge.api.user import UserAPI
 
 
-class Client:
+class BaseClient:
     """Represents a client accessing the TestLodge API."""
 
     def __init__(
