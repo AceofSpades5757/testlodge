@@ -40,5 +40,18 @@ user_json: UserJSON = dict(
 )
 
 # Get a list of users (Default: page 1)
-user_list_json: UserListJSON = tl.get_user_list_json()
+user_list_json: UserListJSON = tl.list_user_json()
+```
+
+## Projects
+
+```python
+from testlodge.typing import ProjectJSON
+from testlodge.typing import ProjectListJSON
+
+
+# Get a list of projects (Default: page 1)
+project_list_json: ProjectListJSON = tl.list_project_json()
+# Get a project
+project_list_json: ProjectJSON = tl.show_project_json(project_id=123)
 ```

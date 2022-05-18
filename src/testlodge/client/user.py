@@ -4,5 +4,5 @@ from testlodge.typing.user import UserListJSON
 
 
 class UserClient(BaseClient):
-    def get_user_list_json(self, page: int = 1) -> UserListJSON:
+    def list_user_json(self, page: int = 1) -> UserListJSON:
         return getattr(self.api, UserAPI.name)._list(page)
