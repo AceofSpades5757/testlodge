@@ -55,3 +55,13 @@ project_list_json: ProjectListJSON = tl.list_project_json()
 # Get a project
 project_list_json: ProjectJSON = tl.show_project_json(project_id=123)
 ```
+
+## Custom Fields
+
+```python
+from testlodge.typing import CustomFieldListJSON
+
+
+# Get a list of custom fields for a project
+custom_field_list_json: CustomFieldListJSON = tl.list_custom_field_json(project_id=123)
+```
