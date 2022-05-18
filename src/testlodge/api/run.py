@@ -75,9 +75,9 @@ class RunAPI(BaseAPI):
             params['page'] = page
         if order != SortRunOrder.CREATED_AT:
             params['order'] = int(order)
-        if status != None:
+        if status is not None:
             params['status'] = int(status)
-        if user_id != None:
+        if user_id is not None:
             params['user_id'] = user_id
 
         response: Response = self.client._request(

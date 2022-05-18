@@ -1,3 +1,4 @@
+from typing import Dict
 from typing import List
 from typing import Optional
 
@@ -96,7 +97,7 @@ class RequirementAPI(BaseAPI):
             f'/requirements/{requirement_id}.json'
         )
 
-        params = {}
+        params: Dict[str, str] = {}
         if include is not None:
             raise NotImplementedError('Not implemented yet.')
         else:
