@@ -52,6 +52,7 @@ class ProjectAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
     ) -> ProjectJSON:
         """Get the details for a project.
@@ -78,6 +79,7 @@ class ProjectAPI(BaseAPI):
     def _create(
         self,
         name: str,
+        *,
         description: Optional[str] = None,
         issue_tracker_credential_id: Optional[int] = None,
         issue_tracker_project_id: Optional[str] = None,
@@ -118,6 +120,7 @@ class ProjectAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         project: ProjectJSON,
     ) -> ProjectJSON:
@@ -154,6 +157,7 @@ class ProjectAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
     ) -> None:
         """Delete a project.

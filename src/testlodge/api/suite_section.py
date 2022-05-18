@@ -22,7 +22,7 @@ class SuiteSectionAPI(BaseAPI):
     name: str = 'suite_section'
 
     def _list(
-        self, project_id: int, suite_id: int, page: int = 1
+        self, *, project_id: int, suite_id: int, page: int = 1
     ) -> SuiteSectionListJSON:
         """Paginated list of all suite sections inside a suite.
 
@@ -57,6 +57,7 @@ class SuiteSectionAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite_section_id: int,
@@ -88,6 +89,7 @@ class SuiteSectionAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite_section: SuiteSectionJSON,
@@ -124,6 +126,7 @@ class SuiteSectionAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite_section_id: int,
@@ -163,6 +166,7 @@ class SuiteSectionAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite_section_id: int,

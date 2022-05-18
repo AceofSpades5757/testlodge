@@ -17,6 +17,7 @@ class CustomFieldAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
     ) -> CustomFieldListJSON:
         """List all custom fields in a project.

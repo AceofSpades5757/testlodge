@@ -23,6 +23,7 @@ class SuiteAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         page: int = 1,
         order: SortOrder = SortOrder.CREATED_AT,
@@ -60,6 +61,7 @@ class SuiteAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         suite_id: int,
     ) -> SuiteJSON:
@@ -88,6 +90,7 @@ class SuiteAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         suite: SuiteJSON,
     ) -> SuiteJSON:
@@ -121,6 +124,7 @@ class SuiteAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite: SuiteJSON,
@@ -158,6 +162,7 @@ class SuiteAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
         suite_id: int,
     ) -> None:

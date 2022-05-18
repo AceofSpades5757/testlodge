@@ -26,6 +26,7 @@ class PlanAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         page: int = 1,
         order: SortOrder = SortOrder.CREATED_AT,
@@ -63,6 +64,7 @@ class PlanAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         plan_id: int,
     ) -> PlanJSON:
@@ -91,6 +93,7 @@ class PlanAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         plan: PlanJSON,
     ) -> PlanJSON:
@@ -122,6 +125,7 @@ class PlanAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         plan_id: int,
         plan: PlanJSON,
@@ -156,7 +160,7 @@ class PlanAPI(BaseAPI):
 
         return plan_json
 
-    def _delete(self, project_id: int, plan_id: int) -> None:
+    def _delete(self, *, project_id: int, plan_id: int) -> None:
         """Delete a plan.
 
         Parameters

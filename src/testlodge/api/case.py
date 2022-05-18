@@ -25,6 +25,7 @@ class CaseAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         suite_id: int,
         suite_section_id: int,
@@ -65,6 +66,7 @@ class CaseAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         suite_id: int,
         case_id: int,
@@ -112,6 +114,7 @@ class CaseAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         suite_id: int,
         step: CaseJSON,
@@ -159,6 +162,7 @@ class CaseAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         suite_id: int,
         case_id: int,
@@ -196,7 +200,7 @@ class CaseAPI(BaseAPI):
 
         return case_json
 
-    def _delete(self, project_id: int, suite_id: int, case_id: int) -> None:
+    def _delete(self, *, project_id: int, suite_id: int, case_id: int) -> None:
         """Delete a test case.
 
         Parameters

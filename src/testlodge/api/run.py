@@ -41,6 +41,7 @@ class RunAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         page: int = 1,
         user_id: int = None,
@@ -89,6 +90,7 @@ class RunAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         run_id: int,
     ) -> RunJSON:
@@ -117,6 +119,7 @@ class RunAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         run: RunJSON,
     ) -> RunJSON:
@@ -158,6 +161,7 @@ class RunAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         run_id: int,
         run: RunJSON,
@@ -197,6 +201,7 @@ class RunAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
         run_id: int,
     ) -> None:

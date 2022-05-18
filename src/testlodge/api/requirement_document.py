@@ -35,6 +35,7 @@ class RequirementDocumentAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         page: int = 1,
         order: SortRequirementDocumentOrder = SortRequirementDocumentOrder.CREATED_AT,
@@ -74,6 +75,7 @@ class RequirementDocumentAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
     ) -> RequirementDocumentJSON:
@@ -102,6 +104,7 @@ class RequirementDocumentAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         requirement_document: RequirementDocumentJSON,
     ) -> RequirementDocumentJSON:
@@ -136,6 +139,7 @@ class RequirementDocumentAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         requirement_document: RequirementDocumentJSON,
@@ -174,6 +178,7 @@ class RequirementDocumentAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
     ) -> None:

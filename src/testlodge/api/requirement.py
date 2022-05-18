@@ -26,6 +26,7 @@ class RequirementAPI(BaseAPI):
 
     def _list(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         page: int = 1,
@@ -62,6 +63,7 @@ class RequirementAPI(BaseAPI):
 
     def _show(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         requirement_id: int,
@@ -114,6 +116,7 @@ class RequirementAPI(BaseAPI):
 
     def _create(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         requirement: RequirementJSON,
@@ -153,6 +156,7 @@ class RequirementAPI(BaseAPI):
 
     def _update(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         requirement_id: int,
@@ -196,6 +200,7 @@ class RequirementAPI(BaseAPI):
 
     def _delete(
         self,
+        *,
         project_id: int,
         requirement_document_id: int,
         requirement_id: int,
