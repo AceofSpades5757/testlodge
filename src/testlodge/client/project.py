@@ -10,12 +10,13 @@ class ProjectClient(BaseClient):
     def list_project_json(self, page: int = 1) -> ProjectListJSON:
         return getattr(self.api, ProjectAPI.name)._list(page)
 
-    def show_project_json(self, project_id: int) -> ProjectJSON:
+    def show_project_json(self, *, project_id: int) -> ProjectJSON:
         return getattr(self.api, ProjectAPI.name)._show(project_id=project_id)
 
     def create_project_json(
         self,
         name: str,
+        *,
         description: Optional[str] = None,
         issue_tracker_credential_id: Optional[int] = None,
         issue_tracker_project_id: Optional[str] = None,
@@ -29,6 +30,7 @@ class ProjectClient(BaseClient):
 
     def update_project_json(
         self,
+        *,
         project_id: int,
         project: ProjectJSON,
     ) -> ProjectJSON:
@@ -39,6 +41,7 @@ class ProjectClient(BaseClient):
 
     def delete_project_json(
         self,
+        *,
         project_id: int,
     ) -> ProjectJSON:
         return getattr(self.api, ProjectAPI.name)._delete(
