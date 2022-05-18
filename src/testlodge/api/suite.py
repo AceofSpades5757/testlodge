@@ -1,10 +1,20 @@
+from enum import auto
+from enum import IntEnum
+
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.api.common import SortOrder
 from testlodge.typing.suite import SuiteJSON
 from testlodge.typing.suite import SuiteListJSON
+
+
+class SortSuiteOrder(IntEnum):
+    """Method to sort by."""
+
+    CREATED_AT = auto()
+    UPDATED_AT = auto()
+    NAME = auto()
 
 
 class SuiteAPI(BaseAPI):
@@ -26,7 +36,7 @@ class SuiteAPI(BaseAPI):
         *,
         project_id: int,
         page: int = 1,
-        order: SortOrder = SortOrder.CREATED_AT,
+        order: SortSuiteOrder = SortSuiteOrder.CREATED_AT,
     ) -> SuiteListJSON:
         """Paginated list of all suites in a project.
 
@@ -37,8 +47,8 @@ class SuiteAPI(BaseAPI):
         page: int, default=1
             Default: 1
             The number of the page to return.
-        order: SortOrder, default=SortOrder.CREATED_AT
-            Default: SortOrder.CREATED_AT
+        order: SortSuiteOrder, default=SortSuiteOrder.CREATED_AT
+            Default: SortSuiteOrder.CREATED_AT
             Method to sort the list of suites.
         """
 
@@ -49,7 +59,7 @@ class SuiteAPI(BaseAPI):
         params: dict = {}
         if page != 1:
             params['page'] = page
-        if order != SortOrder.CREATED_AT:
+        if order != SortSuiteOrder.CREATED_AT:
             params['order'] = int(order)
 
         response: Response = self.client._request(

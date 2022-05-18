@@ -1,13 +1,20 @@
-from typing import Dict
-from typing import Optional
+from enum import auto
+from enum import IntEnum
 
 from furl import Path as UrlPath
 from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
-from testlodge.api.common import SortOrder
 from testlodge.typing.plan import PlanJSON
 from testlodge.typing.plan import PlanListJSON
+
+
+class SortPlanOrder(IntEnum):
+    """Method to sort by."""
+
+    CREATED_AT = auto()
+    UPDATED_AT = auto()
+    NAME = auto()
 
 
 class PlanAPI(BaseAPI):
@@ -29,7 +36,7 @@ class PlanAPI(BaseAPI):
         *,
         project_id: int,
         page: int = 1,
-        order: SortOrder = SortOrder.CREATED_AT,
+        order: SortPlanOrder = SortPlanOrder.CREATED_AT,
     ) -> PlanListJSON:
         """Paginated list of all plans in a project.
 
@@ -40,8 +47,8 @@ class PlanAPI(BaseAPI):
         page: int, default=1
             Default: 1
             The number of the page to return.
-        order: SortOrder, default=SortOrder.CREATED_AT
-            Default: SortOrder.CREATED_AT
+        order: SortPlanOrder, default=SortPlanOrder.CREATED_AT
+            Default: SortPlanOrder.CREATED_AT
             Method to sort the list.
         """
 
@@ -52,7 +59,7 @@ class PlanAPI(BaseAPI):
         params: dict = {}
         if page != 1:
             params['page'] = page
-        if order != SortOrder.CREATED_AT:
+        if order != SortPlanOrder.CREATED_AT:
             params['order'] = int(order)
 
         response: Response = self.client._request(
