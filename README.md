@@ -5,6 +5,8 @@
 
 ![CI/CD](https://img.shields.io/github/checks-status/AceofSpades5757/testlodge/main?label=CI/CD)
 
+[![Coverage](https://github.com/AceofSpades5757/testlodge/actions/workflows/tests.yml/badge.svg)](https://github.com/AceofSpades5757/testlodge/actions/workflows/github-actions.yml)
+
 # Description
 
 Python client library for interacting with TestLodge.
