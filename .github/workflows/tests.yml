@@ -13,9 +13,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v3
-      
+
     - name: Create Virtual Environment
       run: make venv
-      
+
     - name: Run Tests
       run: make test
