@@ -2,15 +2,17 @@
 PROJECT_NAME = "testlodge"
 
 # Environment
+VENV_DIR = .venv
 ifeq ($(OS),Windows_NT)
 	PYTHON = py
+	VENV_BIN = ${VENV_DIR}/Scripts
 else
 	PYTHON = python3
+	VENV_BIN = ${VENV_DIR}/bin
 endif
 
-VENV_DIR = .venv
-VENV_PYTHON = ${VENV_DIR}/Scripts/python.exe
-VENV_PIP = ${VENV_DIR}/Scripts/pip.exe
+VENV_PYTHON = ${VENV_BIN}/python.exe
+VENV_PIP = ${VENV_BIN}/pip.exe
 
 # Makefile Settings
 .DEFAULT_GOAL = help
