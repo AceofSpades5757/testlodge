@@ -3,6 +3,8 @@
 [![pypi](https://img.shields.io/pypi/v/testlodge?style=plastic)](https://pypi.org/project/testlodge/)
 [![Read the Docs](https://img.shields.io/readthedocs/testlodge)](https://testlodge.readthedocs.io/en/latest/)
 
+![CI/CD](https://img.shields.io/github/checks-status/AceofSpades5757/testlodge/main?label=CI/CD)
+
 # Description
 
 Python client library for interacting with TestLodge.
