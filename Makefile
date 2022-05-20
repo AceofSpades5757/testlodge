@@ -1,11 +1,18 @@
+# Project
 PROJECT_NAME = "testlodge"
 
-PYTHON = py
+# Environment
+ifeq ($(OS),Windows_NT)
+	PYTHON = py
+else
+	PYTHON = python3
+endif
+
 VENV_DIR = .venv
 VENV_PYTHON = ${VENV_DIR}/Scripts/python.exe
 VENV_PIP = ${VENV_DIR}/Scripts/pip.exe
 
-# Settings
+# Makefile Settings
 .DEFAULT_GOAL = help
 .PHONY: build publish test venv clean
 
