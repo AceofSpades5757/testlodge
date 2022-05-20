@@ -1,4 +1,7 @@
-[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit) [![pypi](https://img.shields.io/pypi/v/testlodge?style=plastic)](https://pypi.org/project/testlodge/)
+[![pre-commit](https://img.shields.io/badge/pre--commit-enabled-brightgreen?logo=pre-commit&logoColor=white)](https://github.com/pre-commit/pre-commit)
+
+[![pypi](https://img.shields.io/pypi/v/testlodge?style=plastic)](https://pypi.org/project/testlodge/)
+![Read the Docs](https://img.shields.io/readthedocs/testlodge)
 
 # Description
 
@@ -9,6 +12,8 @@ Python client library for interacting with TestLodge.
 `pip install testlodge`
 
 # Usage
+
+[Documentation](https://img.shields.io/readthedocs/testlodge)
 
 ```python
 import os
