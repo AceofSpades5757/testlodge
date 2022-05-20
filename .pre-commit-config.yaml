@@ -32,5 +32,7 @@ repos:
   hooks:
   - id: mypy
     name: Code Linter (Type Checking with mypy)
-    exclude: tests/*
+    exclude:
+      - tests/*
+      - docs/*
     additional_dependencies: [types-requests]
