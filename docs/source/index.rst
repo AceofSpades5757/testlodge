@@ -10,6 +10,19 @@ Welcome to testlodge's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+.. note::
+
+   This project is under active development.
+
+This package gives a Python interface for TestLodge's REST API.
+
+Installation
+===
+
+`pip install testlodge`
+
+Usage
+===
 
 
 Indices and tables
