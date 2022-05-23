@@ -20,12 +20,12 @@ Welcome to testlodge's documentation!
 This package gives a Python interface for TestLodge's REST API.
 
 Installation
-===
+============
 
 `pip install testlodge`
 
 Usage
-===
+=====
 
 
 Indices and tables
