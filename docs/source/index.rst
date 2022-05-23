@@ -10,6 +10,9 @@ Welcome to testlodge's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   authentication
+   client
+
 .. note::
 
    This project is under active development.

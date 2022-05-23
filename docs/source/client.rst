@@ -1,5 +1,5 @@
 Client
-===
+======
 
 The clients is the top-level interface representing your connection with the
 TestLodge API.

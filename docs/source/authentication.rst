@@ -1,5 +1,5 @@
 Authentication
-===
+==============
 
 The API uses an email, API key, and account ID which must all be specified on
 instantiation.
