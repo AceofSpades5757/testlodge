@@ -7,10 +7,14 @@ with open('README.md', 'r') as fin:
 
 setuptools.setup(
     name='testlodge',
-    version='0.0.37',
+    version='0.0.38',
     author='Kyle L. Davis',
     author_email='AceofSpades5757.github@gmail.com',
     url='https://github.com/AceofSpades5757/testlodge',
+    project_urls={
+        'Documentation': 'https://testlodge.readthedocs.io/en/latest/',
+        'Author': 'https://github.com/AceofSpades5757',
+    },
     license='MIT',
     description='Python client library for interacting with TestLodge.',
     long_description=long_description,
