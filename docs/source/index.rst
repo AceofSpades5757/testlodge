@@ -10,6 +10,7 @@ Welcome to testlodge's documentation!
    :maxdepth: 2
    :caption: Contents:
 
+   quickstart
    authentication
    client
 
@@ -22,7 +23,7 @@ This package gives a Python interface for TestLodge's REST API.
 Installation
 ============
 
-`pip install testlodge`
+``pip install testlodge``
 
 Usage
 =====
