@@ -3,6 +3,7 @@ from typing import TypedDict
 
 
 DateTimeStr = str  # Type Alias
+UserID = int  # Type Alias
 
 Pagination = TypedDict(
     'Pagination',
