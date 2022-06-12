@@ -6,7 +6,7 @@ from furl.furl import furl as Url
 from requests.models import Response
 from testlodge.api.base import BaseAPI
 from testlodge.typing.plan_content import PlanContentJSON
-from testlodge.typing.plan_content import PlantContentListJSON
+from testlodge.typing.plan_content import PlanContentListJSON
 
 
 class PlanContentAPI(BaseAPI):
@@ -29,7 +29,7 @@ class PlanContentAPI(BaseAPI):
         project_id: int,
         plan_id: int,
         page: int = 1,
-    ) -> PlantContentListJSON:
+    ) -> PlanContentListJSON:
         """Paginated list of all plan content in a plan.
 
         Parameters
@@ -54,7 +54,7 @@ class PlanContentAPI(BaseAPI):
         response: Response = self.client._request(
             method=method, url=url, params=params
         )
-        plan_content_list: PlantContentListJSON = response.json()
+        plan_content_list: PlanContentListJSON = response.json()
 
         return plan_content_list
 
