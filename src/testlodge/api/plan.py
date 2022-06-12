@@ -54,7 +54,7 @@ class PlanAPI(BaseAPI):
 
         method = 'GET'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' 'plans.json'
+            f'/projects/{project_id}/plans.json'
         )
         params: dict = {}
         if page != 1:
@@ -87,7 +87,7 @@ class PlanAPI(BaseAPI):
 
         method = 'GET'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/plans/{plan_id}.json'
+            f'/projects/{project_id}/plans/{plan_id}.json'
         )
 
         response: Response = self.client._request(
@@ -118,7 +118,7 @@ class PlanAPI(BaseAPI):
 
         method = 'POST'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' 'plans.json'
+            f'/projects/{project_id}/plans.json'
         )
 
         data = dict(plan=plan)
@@ -153,7 +153,7 @@ class PlanAPI(BaseAPI):
 
         method = 'PATCH'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/plans/{plan_id}.json'
+            f'/projects/{project_id}/plans/{plan_id}.json'
         )
 
         data = dict(plan=plan)
@@ -180,7 +180,7 @@ class PlanAPI(BaseAPI):
 
         method = 'DELETE'
         url: Url = self.client.base_url / UrlPath(
-            f'/projects/{project_id}' f'/plans/{plan_id}.json'
+            f'/projects/{project_id}/plans/{plan_id}.json'
         )
 
         response: Response = self.client._request(method=method, url=url)
